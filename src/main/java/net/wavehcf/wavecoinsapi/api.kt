@@ -27,7 +27,7 @@ class WaveDatabase {
     var client = KMongo.createClient(settings)
 
     fun connectDb(): MongoDatabase {
-        return client.getDatabase("KrataEconomy")
+        return client.getDatabase("WaveCoins")
     }
 
 }
