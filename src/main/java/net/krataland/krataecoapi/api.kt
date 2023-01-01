@@ -17,18 +17,14 @@ data class Dinero(val cuenta: String, val cantidad: Int)
 class KrataDatabase {
 
 
-    lateinit var client: MongoClient
 
     val settings = MongoClientSettings.builder()
         .applyConnectionString(ConnectionString("mongodb://admin:admin@20.106.208.178:27017/"))
         .uuidRepresentation(UuidRepresentation.STANDARD)
         .codecRegistry(KMongoUtil.defaultCodecRegistry)
         .build()
-    fun createDb(): MongoClient {
 
-        client = KMongo.createClient(settings)
-        return client
-    }
+    var client = KMongo.createClient(settings)
 
     fun connectDb(): MongoDatabase {
         return client.getDatabase("KrataEconomy")
