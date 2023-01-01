@@ -24,7 +24,7 @@ class KrataDatabase {
         .uuidRepresentation(UuidRepresentation.STANDARD)
         .codecRegistry(KMongoUtil.defaultCodecRegistry)
         .build()
-    fun createDb(Conexion: String): MongoClient {
+    fun createDb(): MongoClient {
 
         client = KMongo.createClient(settings)
         return client
