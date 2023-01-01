@@ -18,15 +18,15 @@ class KrataDatabase {
 
 
     lateinit var client: MongoClient
-/*
+
     val settings = MongoClientSettings.builder()
         .applyConnectionString(ConnectionString("mongodb://admin:admin@20.106.208.178:27017/"))
         .uuidRepresentation(UuidRepresentation.STANDARD)
         .codecRegistry(KMongoUtil.defaultCodecRegistry)
-        .build()*/
+        .build()
     fun createDb(): MongoClient {
 
-        client = KMongo.createClient("mongodb://admin:admin@20.106.208.178:27017/")
+        client = KMongo.createClient(settings)
         return client
     }
 
