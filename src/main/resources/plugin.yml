@@ -1,0 +1,4 @@
+name: KrataEcoAPI
+version: '${project.version}'
+main: net.krataland.krataecoapi.KrataEcoAPI
+api-version: 1.17
