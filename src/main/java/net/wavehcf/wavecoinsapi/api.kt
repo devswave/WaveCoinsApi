@@ -1,4 +1,4 @@
-package net.krataland.krataecoapi
+package net.wavehcf.wavecoinsapi
 
 import com.mongodb.ConnectionString
 import com.mongodb.MongoClientSettings
@@ -14,7 +14,7 @@ import org.litote.kmongo.getCollection
 import org.litote.kmongo.util.KMongoUtil
 
 data class Dinero(val cuenta: String, val cantidad: Int)
-class KrataDatabase {
+class WaveDatabase {
 
 
 
@@ -33,10 +33,10 @@ class KrataDatabase {
 }
 
 
-val collection = KrataDatabase().connectDb().getCollection<Dinero>()
+val collection = WaveDatabase().connectDb().getCollection<Dinero>()
 
 
-class KrataEconomy {
+class WaveCoins {
 
     /**
      * Crea un banco con el nombre especificado
@@ -124,7 +124,7 @@ class KrataEconomy {
         return if(datos?.cuenta == null){
             "No existe tal cuenta"
         } else {
-            "Economia de ${datos?.cuenta}\n- Dinero: ${datos?.cantidad}"
+            return datos.cantidad;
         }
 
     }
