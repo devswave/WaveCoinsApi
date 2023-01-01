@@ -138,7 +138,7 @@ class WaveCoins {
         return if(datos?.cuenta == null){
             "No existe tal cuenta"
         } else {
-            return collection.updateOne(Filters.eq("cuenta", Name), Updates.set("cantidad", "0".toInt()))
+            return collection.updateOne(Filters.eq("cuenta", Name), Updates.set("cantidad", 0))
 
         }
     }
