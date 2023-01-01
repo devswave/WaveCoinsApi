@@ -48,7 +48,7 @@ class WaveCoins {
         return if (dato?.cuenta.toString() == ecoName.name) {
             ecoName.sendMessage("Ya existe ese valor")
         } else {
-            collection.insertOne(Dinero(ecoName.name, 0))
+            collection.insertOne(Dinero(ecoName.name, 25))
             ecoName.sendMessage("Creando cuenta para ${ecoName.name} | Dinero: 0")
         }
 
