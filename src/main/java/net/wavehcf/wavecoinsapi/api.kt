@@ -129,5 +129,19 @@ class WaveCoins {
 
     }
 
+    /**
+     * Elimina el dinero de una cuenta.
+     */
+    fun datawipe(Name: String): Any {
+        val datos = collection.findOne("{cuenta:'${Name}'}")
+
+        return if(datos?.cuenta == null){
+            "No existe tal cuenta"
+        } else {
+            return collection.updateOne(Filters.eq("cuenta", Name), Updates.set("cantidad", "0".toInt()))
+
+        }
+    }
+
 
 }
