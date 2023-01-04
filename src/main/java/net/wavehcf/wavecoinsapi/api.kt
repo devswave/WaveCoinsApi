@@ -110,7 +110,7 @@ class WaveCoins {
      */
     fun hasMoney(Name: String, Cantidad: Int): Boolean {
         val datos = collection.findOne("{cuenta:'$Name'}")
-        val tieneDinero = datos?.cantidad?.equals(Cantidad) as Boolean
+        val tieneDinero = datos?.cantidad?.compareTo(Cantidad) as Boolean
 
         return tieneDinero
     }
@@ -132,7 +132,7 @@ class WaveCoins {
     /**
      * Elimina el dinero de una cuenta.
      */
-    fun datawipe(Name: String): Any {
+    fun dataWipe(Name: String): Any {
         val datos = collection.findOne("{cuenta:'${Name}'}")
 
         return if(datos?.cuenta == null){
