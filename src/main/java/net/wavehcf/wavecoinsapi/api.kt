@@ -113,10 +113,10 @@ class WaveCoins {
         val tieneDinero = datos?.cantidad
 
         if (tieneDinero != null) {
-            if(tieneDinero.toInt()!! <= Cantidad) {
-                return true;
-            } else {
+            if(tieneDinero.toInt()!! < Cantidad) {
                 return false;
+            } else {
+                return true;
             }
 
         }
